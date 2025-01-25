@@ -20,7 +20,7 @@ class Program
                 // Fetch stock data
                 var data = await service.GetDailyStockPricesAsync(company);
 
-                // Print raw response for debugging (optional)
+                //raw response
                 Console.WriteLine($"Raw API Response for {company}: {data}");
 
                 // Handle empty or invalid responses
@@ -55,7 +55,7 @@ class Program
                 Console.WriteLine($"Error fetching data for {company}: {ex.Message}");
             }
 
-            // Rate limit: Wait 15 seconds between calls
+            //Wait 15 seconds between calls
             await Task.Delay(15000);
         }
 
